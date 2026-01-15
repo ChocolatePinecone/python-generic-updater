@@ -4,6 +4,8 @@ A dialog for updating specific files by syncing them to a server. Designed to wo
 
 This software may only be used as described in the LICENSE file. Please contact me through a github issue for questions about commercial use.
 
+Compatible with Python 3.10 and up
+
 ## Installation
 TODO: Insert instructions, hopefully just downloading this as a package with pip??
 
