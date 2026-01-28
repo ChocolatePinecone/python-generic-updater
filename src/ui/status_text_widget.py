@@ -1,5 +1,5 @@
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor, QFont
+from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QWidget, QLabel, QHBoxLayout
 from pyqtwaitingspinner import WaitingSpinner, SpinnerParameters, SpinDirection
 from qtawesome import IconWidget
@@ -39,15 +39,11 @@ class StatusTextWidget(QWidget):
 
         self.icon = IconWidget()
         layout.addWidget(self.icon)
+        layout.addSpacing(5)
 
         self.status_text = QLabel()
-        # self.status_text.setWordWrap(True)
-        self.status_text.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.status_text.setFixedHeight(
             SPINNER_WIDGET_HEIGHT)  # Prevents vertical repositioning when spinner is activated
-        font = QFont()
-        font.setPointSize(10)
-        self.status_text.setFont(font)
         layout.addWidget(self.status_text)
 
         self.spinner_widget = QWidget()
