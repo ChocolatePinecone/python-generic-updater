@@ -4,9 +4,9 @@ from typing import Union
 
 from PyQt6.QtCore import pyqtSignal, QObject
 
-from src.data import general_info
-from src.libs.file_download import download_file_to_location
-from src.libs.updates_info import UpdatesInfo
+from python_generic_updater.data import general_info
+from python_generic_updater.libs.file_download import download_file_to_location
+from python_generic_updater.libs.updates_info import UpdatesInfo
 
 DOWNLOADABLE_FILES_PATH = 'Updates/'
 

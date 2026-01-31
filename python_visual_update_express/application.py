@@ -2,8 +2,8 @@ from pathlib import Path
 
 from PyQt6.QtWidgets import QApplication
 
-from src.data.general_settings import APP_STYLE
-from src.ui.main_window import UpdaterWindow
+from python_generic_updater.data.general_settings import APP_STYLE
+from python_generic_updater.ui.updater_window import UpdaterWindow
 
 TMP_UPDATE_BASE_URL = 'http://jelmerpijnappel.nl/releases/broers-optiek/lensplan-hulp-applicatie/'
 TMP_CURRENT_UPDATE_VERSION = '1.3.0'

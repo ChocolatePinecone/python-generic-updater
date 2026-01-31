@@ -3,10 +3,10 @@ from PyQt6.QtGui import QGuiApplication
 from PyQt6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
 from semver import Version
 
-from src.data import general_info
-from src.data.general_info import GeneralInfo
-from src.data.general_settings import VERSION, WINDOW_WIDTH, WINDOW_HEIGHT
-from src.ui.window_content import WindowContent
+from python_generic_updater.data import general_info
+from python_generic_updater.data.general_info import GeneralInfo
+from python_generic_updater.data.general_settings import VERSION, WINDOW_WIDTH, WINDOW_HEIGHT
+from python_generic_updater.ui.window_content import WindowContent
 
 VERSION_PREFIX = 'v. '
 
@@ -37,6 +37,7 @@ class UpdaterWindow(QMainWindow):
 
         # CENTER CONTENT
         self.window_content = WindowContent()
+        self.window_content.quit_triggered.connect(self.close)
         layout.addWidget(self.window_content)
 
         # INITIALIZATION

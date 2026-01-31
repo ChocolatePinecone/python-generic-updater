@@ -2,17 +2,17 @@ import shutil
 from enum import Enum
 from tempfile import TemporaryDirectory
 
-from PyQt6.QtCore import Qt, QThreadPool, QCoreApplication
+from PyQt6.QtCore import Qt, QThreadPool, pyqtSignal
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLayout, QPushButton, QHBoxLayout, QProgressBar
 
-from src.data import general_info
-from src.libs.file_download import download_text_file
-from src.libs.icons import Icon
-from src.libs.threading import Worker
-from src.libs.update_manager import UpdateManager
-from src.libs.updates_info import UpdatesInfo
-from src.ui.error_handling import process_error
-from src.ui.status_text_widget import StatusTextWidget
+from python_generic_updater.data import general_info
+from python_generic_updater.libs.file_download import download_text_file
+from python_generic_updater.libs.icons import Icon
+from python_generic_updater.libs.threading import Worker
+from python_generic_updater.libs.update_manager import UpdateManager
+from python_generic_updater.libs.updates_info import UpdatesInfo
+from python_generic_updater.ui.error_handling import process_error
+from python_generic_updater.ui.status_text_widget import StatusTextWidget
 
 TEXT_INITIAL_STATUS = 'Ready to update'
 TEXT_CHECKING_FOR_UPDATE = 'Checking for update...'
@@ -47,6 +47,8 @@ class WindowContent(QWidget):
     layout: QVBoxLayout = None
     update_manager: UpdateManager
     threadpool: QThreadPool
+
+    quit_triggered = pyqtSignal()
 
     def __init__(self) -> None:
         super().__init__()
@@ -160,7 +162,7 @@ class WindowContent(QWidget):
 
         h_layout.addStretch()
         quit_button = QPushButton('Quit')
-        quit_button.clicked.connect(QCoreApplication.quit)
+        quit_button.clicked.connect(self.quit_triggered.emit)
         h_layout.addWidget(quit_button)
 
         layout.addWidget(quit_button_bar)

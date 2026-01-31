@@ -2,3 +2,5 @@ PyQt6
 pyqtwaitingspinner==1.3.2
 semver
 QtAwesome
+build
+twine

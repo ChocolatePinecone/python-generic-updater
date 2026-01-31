@@ -1,13 +1,7 @@
-# Python generic updater
+# Python Visual Update Express
 
-A dialog for updating specific files by syncing them to a server. Designed to work like InstallForge's "Visual Update Express".
-
-This software may only be used as described in the LICENSE file. Please contact me through a github issue for questions about commercial use.
-
-Compatible with Python 3.10 and up
-
-## Installation
-TODO: Insert instructions, hopefully just downloading this as a package with pip??
+A dialog for updating an application by downloading files from a server. Designed to work like InstallForge's "Visual
+Update Express".
 
 ## Development Commands
 
@@ -35,28 +29,18 @@ python -m pip install -r requirements.txt
 
 ### Build application
 
-For windows:
+For releasing a new build on PyPi, follow these steps:
+
+- First, Update the release version in the pyproject.toml
+
+- Build the python package files with the command
 
 ```sh
-pyinstaller -n "app-name" --noconsole --add-binary="libs/*;." --onefile updater.py
+python -m build
 ```
 
-More information about using pyinstaller: https://www.pythonguis.com/tutorials/packaging-pyqt6-applications-windows-pyinstaller/
+- Upload the new release to PyPi
 
-### Usage
-TODO: Add explanation about setting up an updatescript.ini like below:
-
-```javascript
-releases{
-    1.0.0
-    1.0.1 // Add the new version like this. Keep previous version in the list, otherwise those versions cannot update.
-}
-
-release:1.0.0{
-
-}
-
-release:1.0.1{
-    DownloadFile:filename
-}
+```sh
+python -m twine upload --repository pypi dist/*
 ```

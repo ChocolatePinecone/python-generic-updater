@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python-visual-update-express"
+version = "1.0.0"
+authors = [
+    { name = "Jelmer Pijnappel", email = "chocolatepinecone@gmail.com" },
+]
+description = "A dialog for updating specific files by syncing them from a server. Designed to work like InstallForge's \"Visual Update Express\"."
+readme = "PyPi-README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/ChocolatePinecone/python-generic-updater"
+Issues = "https://github.com/ChocolatePinecone/python-generic-updater/issues"
