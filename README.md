@@ -31,7 +31,7 @@ UPDATE_TARGET_DIR = 'C:/yourlocationpath'
 # setting the create_q_application parameter to 'False'.
 # Otherwise the UpdateWindow will create another QApplication, causing issues with PyQt.
 # If you don't have a PyQt6 QApplication set up, please omit the create_q_application parameter 
-# so the updater will a QApplication up internally.
+# so the updater will set a QApplication up internally.
 updater_window = UpdaterWindow(UPDATE_BASE_URL, CURRENT_VERSION, UPDATE_TARGET_DIR, False)
 
 ```
