@@ -1,23 +1,29 @@
 from PyQt6.QtCore import QThreadPool, Qt, QSize
 from PyQt6.QtGui import QGuiApplication
-from PyQt6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QMainWindow, QVBoxLayout, QWidget, QApplication
 from semver import Version
 
-from python_generic_updater.data import general_info
-from python_generic_updater.data.general_info import GeneralInfo
-from python_generic_updater.data.general_settings import VERSION, WINDOW_WIDTH, WINDOW_HEIGHT
-from python_generic_updater.ui.window_content import WindowContent
+from python_visual_update_express.data import general_info
+from python_visual_update_express.data.general_info import GeneralInfo
+from python_visual_update_express.data.general_settings import VERSION, WINDOW_WIDTH, WINDOW_HEIGHT
+from python_visual_update_express.ui.window_content import WindowContent
 
 VERSION_PREFIX = 'v. '
 
 
 class UpdaterWindow(QMainWindow):
+    app: QApplication
     window_content: WindowContent
 
     threadpool: QThreadPool
     centered_on_init: bool = False
 
-    def __init__(self, update_base_url: str, current_update_version: str, target_directory_path: str) -> None:
+    def __init__(self, update_base_url: str, current_update_version: str, target_directory_path: str,
+                 create_q_application: bool = True) -> None:
+        if create_q_application:
+            self.app = QApplication([])
+            self.app.setStyle('Fusion')
+
         super().__init__()
 
         # GENERAL INFO
@@ -57,3 +63,9 @@ class UpdaterWindow(QMainWindow):
 
         self.centered_on_init = True
         return super().resizeEvent(event)
+
+    def show(self):
+        super().show()
+
+        if self.app:
+            self.app.exec()

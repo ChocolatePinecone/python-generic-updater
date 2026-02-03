@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QWidget, QLabel, QHBoxLayout
 from pyqtwaitingspinner import WaitingSpinner, SpinnerParameters, SpinDirection
 from qtawesome import IconWidget
 
-from python_generic_updater.libs.icons import IconsLib, Icon
+from python_visual_update_express.libs.icons import IconsLib, Icon
 
 SPINNER_PARAMS = SpinnerParameters(  # These can be generated in the spinner editor `spinner-conf`
     roundness=100.0,

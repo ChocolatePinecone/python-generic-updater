@@ -5,14 +5,14 @@ from tempfile import TemporaryDirectory
 from PyQt6.QtCore import Qt, QThreadPool, pyqtSignal
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLayout, QPushButton, QHBoxLayout, QProgressBar
 
-from python_generic_updater.data import general_info
-from python_generic_updater.libs.file_download import download_text_file
-from python_generic_updater.libs.icons import Icon
-from python_generic_updater.libs.threading import Worker
-from python_generic_updater.libs.update_manager import UpdateManager
-from python_generic_updater.libs.updates_info import UpdatesInfo
-from python_generic_updater.ui.error_handling import process_error
-from python_generic_updater.ui.status_text_widget import StatusTextWidget
+from python_visual_update_express.data import general_info
+from python_visual_update_express.libs.file_download import download_text_file
+from python_visual_update_express.libs.icons import Icon
+from python_visual_update_express.libs.threading import Worker
+from python_visual_update_express.libs.update_manager import UpdateManager
+from python_visual_update_express.libs.updates_info import UpdatesInfo
+from python_visual_update_express.ui.error_handling import process_error
+from python_visual_update_express.ui.status_text_widget import StatusTextWidget
 
 TEXT_INITIAL_STATUS = 'Ready to update'
 TEXT_CHECKING_FOR_UPDATE = 'Checking for update...'

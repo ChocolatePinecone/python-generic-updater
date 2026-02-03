@@ -1,7 +1,7 @@
 import traceback
 
-from python_generic_updater.data.general_settings import DEBUG_MODE
-from python_generic_updater.ui.notifications import error_notification
+from python_visual_update_express.data.general_settings import DEBUG_MODE
+from python_visual_update_express.ui.notifications import error_notification
 
 
 def process_error(ex: Exception, self=None) -> None:
