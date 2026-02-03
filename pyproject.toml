@@ -11,6 +11,12 @@ authors = [
 description = "A dialog for updating specific files by syncing them from a server. Designed to work like InstallForge's \"Visual Update Express\"."
 readme = "README.md"
 requires-python = ">=3.10"
+dependencies = [
+    "PyQt6>=6.7.1",
+    "pyqtwaitingspinner==1.3.2",
+    "semver>=3.0.4",
+    "QtAwesome>=1.4.0",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
