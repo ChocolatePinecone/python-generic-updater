@@ -9,7 +9,7 @@ authors = [
     { name = "Jelmer Pijnappel", email = "chocolatepinecone@gmail.com" },
 ]
 description = "A dialog for updating specific files by syncing them from a server. Designed to work like InstallForge's \"Visual Update Express\"."
-readme = "PyPi-README.md"
+readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
