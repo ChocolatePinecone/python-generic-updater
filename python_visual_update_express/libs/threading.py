@@ -22,6 +22,7 @@ class Worker(QRunnable):
     @pyqtSlot()
     def run(self):
         try:
+            print('STARTED')
             result = self.fn(*self.args, **self.kwargs)
             self.signals.success.emit()
             self.signals.successResult.emit(result)

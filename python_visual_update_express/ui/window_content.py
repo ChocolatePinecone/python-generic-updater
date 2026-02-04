@@ -129,6 +129,8 @@ class WindowContent(QWidget):
         checker = Worker(self._fetch_updatescript, general_info.info.update_base_url)
         checker.signals.successResult.connect(self._process_updatescript)
         checker.signals.error.connect(process_error)
+        checker.signals.error.connect(lambda: self._fail_update(
+            'An error occurred while checking for updates. Please try again later.'))
         self.threadpool.start(checker)
 
     def _fetch_updatescript(self, url: str) -> None:

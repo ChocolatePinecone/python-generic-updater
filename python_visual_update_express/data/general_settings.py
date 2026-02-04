@@ -5,4 +5,4 @@ WINDOW_WIDTH = 400
 WINDOW_HEIGHT = 200
 ROOT_PATH = os.path.dirname(os.path.abspath(__file__)) + '/'
 APP_STYLE = 'Fusion'
-DEBUG_MODE = True
+DEBUG_MODE = False
